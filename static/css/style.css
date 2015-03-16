@@ -1,0 +1,22 @@
+
+
+html { 
+  background-image: url("/static/images/download.jpg"); 
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+body {padding: 0;
+	margin: 0;
+	background: transparent;
+	}
+	
+.navbar {
+    background-color: transparent;
+    background: transparent;
+  }
+  
+  .navbar li { color: #000 }

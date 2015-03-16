@@ -1,0 +1,13 @@
+{% extends "bucketlist/base.html" %}
+
+{% block body_block %}
+
+  <div class="page-header">
+	<h3>Your List</h3>
+  </div>
+  <form action="" method="post" enctype="multipart/form-data">
+	  {% csrf_token %}
+      {{ form }}
+	  <input type="submit" value="Submit" />
+   </form>
+  {% endblock %}

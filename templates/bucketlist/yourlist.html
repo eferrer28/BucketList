@@ -1,0 +1,22 @@
+{% extends "bucketlist/base.html" %}
+
+{% block body_block %}
+
+  <div class="page-header">
+	<h3>Your List</h3>
+  </div>
+
+    <div class="col-sm-6 col-xs-12">
+    <div class="list-group">
+      <div class="list-group-item">
+        <h4 class="list-group-item-heading">Name of List</h4>
+        <div class="list-group-text">{{ list }}</div>
+      </div>
+	 </div>
+  {% for items in list %}
+   <div>
+    <p>Event: {{items.title }}</p>
+	<p> Finished: {{items.finished}} </p>	
+	<p>Description: {{items.description }}</p>
+	{% endfor %}
+  {% endblock %}
