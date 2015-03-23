@@ -1,1 +1,12 @@
 {% extends 'bucketlist/base.html' %}
+
+{% block body_block %}
+<section id="main" class="container">
+ <div class="box">	
+{% for item in bucket %}
+    <p>{{item.title }}</p>
+
+	{% endfor %}
+ </div>
+</section>
+  {% endblock %}

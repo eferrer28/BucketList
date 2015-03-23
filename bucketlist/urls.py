@@ -10,4 +10,5 @@ urlpatterns = patterns('',
         url(r'profile/$', views.profile, name='profile'),
         url(r'profileedit/$', views.edit_profile, name='profileedit'),
         url(r'addlist/$', views.addlist, name='addlist'),
+        #url(r'listedit/$',views.listedit, name='listedit'),
         )

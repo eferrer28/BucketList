@@ -18,7 +18,8 @@ class UserProfileForm(forms.ModelForm):
         fields = ('location', 'facebook')
         
 class BucketListItemsForm(forms.ModelForm):
+    
+    
     class Meta:
         model = BucketListItems
-        exclude=('user',)
-        fields = ('title', 'description',  'finished')
+        fields = ('title', 'description',  'finished', 'created', )

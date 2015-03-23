@@ -1,0 +1,17 @@
+{% extends 'bucketlist/base.html' %}
+
+
+
+{% block body_block %}
+<section id="main" class="container">
+ <div class="box">	
+
+
+  <h1>Edit Stuff</h1>
+  <form method='POST' class="post-form">{% csrf_token %}
+    {{form.as_p}}
+   <button type="submit" class="save btn btn-default">Save</button>
+  </form>
+ </div>
+</section>
+{% endblock %}
