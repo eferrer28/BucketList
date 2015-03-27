@@ -98,45 +98,7 @@ def addlist(request):
         form = BucketListItemsForm(instance=bucketlist)
         
     return render(request, 'bucketlist/addlist.html', {'form': form, 'bucketlist': bucketlist})   
-'''
-@login_required 
-def listedit(request):
-    
-    post = get_list_or_404(BucketListItems)
-    if request.method == "POST":
-        form = PostForm(request.POST, instance=post)
-        if form.is_valid():
-            post = form.save(commit=False)
-            post.user = request.user
-            post.save()
-            return redirect('blog.views.post_detail')
-    else:
-        form = BucketListItemsForm(instance=post)
-    #return render(request, 'blog/post_edit.html', {'form': form})
-    return render(request, 'bucketlist/listedit.html', {'form': form})
- 
-@login_required     
-def listedit(request):
-    user = request.user
-    bucketlist = bucketlistitems.user
-    if request.method == 'POST':
-        user_form = UserForm(request.POST, instance=user)
-        bucket_form = BucketListItemsForm(request.POST, instance=bucketlist)
-        if bucket_form.is_valid:
-            bucket_form.save()
-            return redirect('profile')
-        
-        else:
-            print profile_form.errors()
-        
-                                        
-    else:
-       user_form = UserForm(instance=user)
-       bucket_form = BucketListItemsForm(instance=bucketlist)
-        
-    return render(request, 'bucketlist/listedit.html',
-                       {'user_form': user_form, 'bucket_form': bucket_form}) 
-'''   
+
 def about(request):
     return render(request, 'bucketlist/about.html')
 

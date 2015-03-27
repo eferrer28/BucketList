@@ -405,10 +405,36 @@
 	}
 
 /* Box */
+	
 
-	#paper {background-image: url("../images/free-paper-texture-2.jpg");
+/*
+	#increase:hover + #hide {
+		    display: block;
+}
+*/
+	#increase img {display: none;
+	}
+	
+
+
+
+	#paper {background-image: url("../images/paper2.jpg");
+		   background-repeat:no-repeat;
+		   background-size: cover;
+		   text-align: center;
+			padding: 0;
+			margin: 0;
+			color: black;
+			font-family: 'Rock Salt', cursive;
 	}
 
+	.paperlist {  text-align: center;
+				  padding: 0;
+				  margin: 0;
+				  
+	}
+
+	
 	.box {
 		background: #fff;
 		border-radius: 6px;
@@ -1428,3 +1454,5 @@
 		#cta .formerize-placeholder {
 			color: rgba(255, 255, 255, 0.75) !important;
 		}
+		
+		

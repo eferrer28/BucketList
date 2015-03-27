@@ -15,20 +15,27 @@
 		<link rel="stylesheet" href="{% static 'css/skel.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/style-wide.css' %}" />
+		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
 		<script src="{% static 'js/jquery.min.js' %}"></script>
 		<script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
 		<script src="{% static 'js/jquery.scrollgress.min.js' %}"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<script src="{% static 'js/skel.min.js' %}"></script>
 		<script src="{% static 'js/skel-layers.min.js' %}"></script>
 		<script src="{% static 'js/init.js' %}"></script>
+		<script src="{% static 'js/yourlist.js' %}"></script>
+
+
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
 	<body>
 
 		<!-- Header -->
 			<header id="header" class="skel-layers-fixed">
-				<h1><a href="index.html">Bucket List</a> by HTML5 UP</h1>
+				<h1><a href="index.html">Bucket List</a></h1>
 				<nav id="nav">
 					<ul>
 						{% if user.is_authenticated %}

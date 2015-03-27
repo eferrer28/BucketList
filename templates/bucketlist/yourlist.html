@@ -1,16 +1,24 @@
 {% extends "bucketlist/base.html" %}
-
+{% load staticfiles %} 
 {% block body_block %}
 
 <section id="main" class="container">
  <div id="paper" class="box">	
-  {% for item in list %}
-  
-    <p>Event: {{item.title }}</p>
-	<p> Finished: {{item.finished}} </p>	
-	<p>Description: {{item.description }}</p>
-	<a class="btn btn-default" href="{% url 'addlist' %}?id={{item.id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+	{% if list %}
+	<ol class="paperlist" id="sortable">
+	{% for item in list %}  
+	<div>
+     <li class="increase">{{item.title }}<span><a href="{% url 'addlist' %}?id={{item.id}}"><img border="0" alt="edit" src="{% static 'images/edit.png' %}" width="20" height="20" /></a></span>
+	</li>
+	</div>
 	{% endfor %}
+	</ol>
+	{% else %} 
+	<p>Your List Is Currently Empty!</p>
+	{% endif %}
  </div>
 </section>
+
+
+
   {% endblock %}

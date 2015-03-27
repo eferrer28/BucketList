@@ -4,7 +4,11 @@
 <section id="main" class="container">
  <div class="box">	
 {% for item in bucket %}
+   <ol>
+	<li>
     <p>{{item.title }}</p>
+	</li>
+  </ol>
 
 	{% endfor %}
  </div>

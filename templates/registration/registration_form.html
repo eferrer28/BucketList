@@ -1,8 +1,36 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
 
-<h1>Register Here</h1>
-        <form method="post" action=".">
-                {% csrf_token %}
-                {{ form.as_p }}
+ <head>
 
-                <input type="submit" value="Submit" />
-        </form>
+  <meta charset="UTF-8">
+
+  <title>CodePen - Log-in</title>
+
+  <link rel='stylesheet' href='http://codepen.io/assets/libs/fullpage/jquery-ui.css'>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'registration1/css/style.css' %}" />
+
+ </head>
+   <body>
+
+  <div class="login-card">
+    <h1>Register</h1><br>
+  <form method="post" action=".">
+  {% csrf_token %}
+   {{form.as_p }}
+    <input type="submit" name="login" class="login login-submit" value=" Register ">
+  </form>
+
+  <div class="login-help">
+    <a href="#">Register</a> • <a href="#">Forgot Password</a>
+   </div>
+  </div>
+
+<!-- <div id="error"><img src="https://dl.dropboxusercontent.com/u/23299152/Delete-icon.png" /> Your caps-lock is on.</div> -->
+
+  <script src='http://codepen.io/assets/libs/fullpage/jquery_and_jqueryui.js'></script>
+
+  </body>
+</html>
