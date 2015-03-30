@@ -2,13 +2,26 @@
 {% load staticfiles %} 
 {% block body_block %}
 
-<section id="main" class="container">
- <div id="paper" class="box">	
+		<div>
+			<ul id="carousel" class="elastislide-list">
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_121.jpg' %}" alt="image01" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_22.jpg' %}" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_23.jpg' %}" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_24.jpg' %}" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_125.jpg' %}" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_26.jpg' %}" /></a></li>
+					<li><a href="#"><img src="{% static 'elastislide/images/small/rsz_27.jpg' %}" /></a></li>
+			</ul>
+		</div>
+ <div>
+  <p class="title">Your List</p>
+ <section id="main" class="container">
+  <div id="paper" class="box">	
 	{% if list %}
 	<ol class="paperlist" id="sortable">
 	{% for item in list %}  
 	<div>
-     <li class="increase">{{item.title }}<span><a href="{% url 'addlist' %}?id={{item.id}}"><img border="0" alt="edit" src="{% static 'images/edit.png' %}" width="20" height="20" /></a></span>
+     <li class="increase">{{item.title }}<span><a href="{% url 'addlist' %}?id={{item.id}}"><img class="image" border="0" alt="edit" src="{% static 'images/edit.png' %}" width="20" height="20" /></a></span>
 	</li>
 	</div>
 	{% endfor %}
@@ -16,7 +29,7 @@
 	{% else %} 
 	<p>Your List Is Currently Empty!</p>
 	{% endif %}
- </div>
+  </div>
 </section>
 
 

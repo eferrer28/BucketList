@@ -8,8 +8,7 @@ from django.template import RequestContext
 import datetime 
 from django.utils import timezone
 from django.db.models import Count
-
-
+from django.contrib import messages
 
 
 
@@ -82,6 +81,12 @@ def addlist(request):
             
     #user = request.user
     if request.method == 'POST':
+        if request.POST.get('control') == 'delete':
+            bucketlist.delete()
+            messages.add_message(request, messages.INFO, 'Item Deleted!')
+            return redirect('yourlist')
+
+            
         form = BucketListItemsForm(request.POST, instance=bucketlist)
         if form.is_valid():
             bucketlist = form.save(commit=False)

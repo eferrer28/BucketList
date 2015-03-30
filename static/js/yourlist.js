@@ -5,10 +5,9 @@ $( "#sortable" ).disableSelection();
         
  $(document).ready(function(){
 	$(".increase" ).mouseover(function() {
-	 $("img").css({"display": "inline"});
+	 $(".image").css({"display": "inline"});
 	});
 	$(".increase").mouseout(function() {
-	 $("img").css({"display": "none"}) 
+	 $(".image").css({"display": "none"}) 
 	});
  });
-

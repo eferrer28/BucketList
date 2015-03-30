@@ -15,6 +15,11 @@
 		<link rel="stylesheet" href="{% static 'css/skel.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/style-wide.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'elastislide/css/custom.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'elastislide/css/elastislide.css' %}" />
+
+	
+		
 		<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -27,6 +32,10 @@
 		<script src="{% static 'js/skel-layers.min.js' %}"></script>
 		<script src="{% static 'js/init.js' %}"></script>
 		<script src="{% static 'js/yourlist.js' %}"></script>
+		<script src="{% static 'js/modernizr.custom.17475.js' %}"></script>
+
+		
+
 
 
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
@@ -34,7 +43,7 @@
 	<body>
 
 		<!-- Header -->
-			<header id="header" class="skel-layers-fixed">
+			<header id="header" class="alt">
 				<h1><a href="index.html">Bucket List</a></h1>
 				<nav id="nav">
 					<ul>
@@ -99,6 +108,14 @@
 					<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
 			</footer>
-
+			
+		<script src="{% static 'js/jquerypp.custom.js' %}"></script>
+		<script src="{% static 'js/jquery.elastislide.js' %}"></script>
+		
+		<script>
+ 			$( '#carousel' ).elastislide( {
+				minItems : 2
+			} );
+		</script>
 	</body>
 </html>
