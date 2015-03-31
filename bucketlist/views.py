@@ -131,8 +131,7 @@ def addlist(request):
             bucketlist.save()
             return redirect('yourlist')
         
-        else:
-            print errorrrr
+       
     
     else:
         form = BucketListItemsForm(instance=bucketlist)
