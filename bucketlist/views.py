@@ -15,8 +15,6 @@ from django.contrib import messages
 def main(request):
     return render(request, 'bucketlist/main.html')
 
-def main(request):
-     return render(request, 'bucketlist/yourlist.html')
      
   
 @login_required    
