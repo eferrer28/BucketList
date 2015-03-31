@@ -26,6 +26,11 @@ class BucketListItems(models.Model):
     finished = models.BooleanField(default=False)
     description = models.CharField(max_length=256)
     created = models.DateTimeField(default=timezone.now)
+    order = models.IntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
     
     
     def __unicode__(self):      #For Python 2, use __str__ on Python 3

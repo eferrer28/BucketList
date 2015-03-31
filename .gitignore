@@ -1,3 +1,8 @@
 staticfiles
 local_settings.py
 db.sqlite3
+myvenv
+__pycache__
+
+
+*.py[co]

@@ -11,3 +11,17 @@ $( "#sortable" ).disableSelection();
 	 $(".image").css({"display": "none"}) 
 	});
  });
+
+
+  $(document).ready(function() {
+    $("#sortable").sortable({
+      update: function(event, ui) {
+        var serial = $('#sortable').sortable('serialize');
+    $.ajax({
+      url: "{% url 'index' %}",
+      type: "post",
+      data: { 'content': serial, 'csrfmiddlewaretoken' : '{{ csrf_token }}' } 
+    });
+      },
+    }).disableSelection();
+  });

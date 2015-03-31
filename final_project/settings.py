@@ -20,11 +20,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 SECRET_KEY = '$4g83(#hjiq#u5t9vug*a5(y#&%(+@jubnj6b9szh5vbo$a#*b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#DEBUG = True for heroku
 
 TEMPLATE_DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = [] for heroku
 
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'templates')
 
@@ -84,7 +84,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-STATIC_ROOT = ''
+#STATIC_ROOT = '' for heroku
 
 STATIC_PATH = os.path.join(BASE_DIR,'static')
 
@@ -118,3 +118,19 @@ LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not
                                                                 
                                                                 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
+
+import dj_database_url
+DATABASES['default'] = dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
+DEBUG = False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
