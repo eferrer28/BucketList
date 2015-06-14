@@ -13,8 +13,9 @@
 					<li><img src="{% static 'elastislide/images/small/rsz_27.jpg' %}" /></a></li>
 			</ul>
 		</div>
- <div>
+	
   <p class="title">Your List</p>
+  <a href="{% url 'addlist' %}" class="fa fa-plus" id="addstuff"></a>
  <section id="main" class="container">
   <div id="paper" class="box">	
 	{% if list %}
