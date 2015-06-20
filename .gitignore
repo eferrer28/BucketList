@@ -6,4 +6,6 @@ __pycache__
 
 *.pyc
 *.py[co]
+*.jpg
+./static/*
 final_project/settings.py
