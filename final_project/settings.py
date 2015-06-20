@@ -10,7 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-import dj_database_url
+#import dj_database_url
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
@@ -23,7 +23,7 @@ SECRET_KEY = '$4g83(#hjiq#u5t9vug*a5(y#&%(+@jubnj6b9szh5vbo$a#*b'
 # SECURITY WARNING: don't run with debug turned on in production!
 #DEBUG = True for heroku
 
-TEMPLATE_DEBUG = True
+TEMPLATE_DEBUG = False #false in production
 
 #ALLOWED_HOSTS = [] for heroku
 
@@ -61,19 +61,27 @@ WSGI_APPLICATION = 'final_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 """
+#PRODUCTION: POSTGRESQL
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:////{0}'.format(os.path.join(BASE_DIR, 'db.sqlite3'))
-    )
-}
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'django',
+        'PASSWORD': 't0asg7L5ke',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+    
+   """
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
@@ -90,17 +98,19 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
-#STATIC_ROOT = '' for heroku
+
 
 STATIC_PATH = os.path.join(BASE_DIR,'static')
-
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (STATIC_PATH,)
+#STATIC_ROOT = '/var/www/yourbucketlist/static'
 
+STATIC_ROOT = 'staticfiles'
+"""
 STATICFILES_DIRS = (
-    STATIC_PATH,
-)
-
-
+	os.path.join(BASE_DIR, "static"),
+	)
+"""
 # List of finder classes that know how to find static files in
 # various locations.
 STATICFILES_FINDERS = (
@@ -125,18 +135,11 @@ LOGIN_URL = '/accounts/login/'  # The page users are directed to if they are not
                                                                 
 AUTH_PROFILE_MODULE = 'accounts.UserProfile'
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config()
 
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+ALLOWED_HOSTS = []
 
-DEBUG = False
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+
+DEBUG = True
